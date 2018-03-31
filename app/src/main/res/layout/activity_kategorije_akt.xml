@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ba.unsa.etf.rma.aldin_masovic.ebook.KategorijeAkt">
+
+    <EditText
+        android:id="@+id/tekstPretraga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Tekst pretrage"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/dPretraga"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/dPretraga"
+        android:layout_width="wrap_content"
+        android:layout_height="@+id/tekstPretraga"
+        android:layout_marginTop="10dp"
+        android:text="Trazi"
+        app:layout_constraintStart_toEndOf="@+id/tekstPretraga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="289dp" />
+
+    <Button
+        android:id="@+id/dDodajKategoriju"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Dodaj kategoriju"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tekstPretraga"
+        app:layout_constraintEnd_toStartOf="@+id/dDodajKnjigu"
+        tools:layout_editor_absoluteX="90dp" />
+
+    <Button
+        android:id="@+id/dDodajKnjigu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Dodaj knjigu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dDodajKategoriju"
+        app:layout_constraintTop_toBottomOf="@+id/tekstPretraga"
+        tools:layout_editor_absoluteX="237dp" />
+
+    <ListView
+        android:id="@+id/listaKategorija"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dDodajKategoriju"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+</android.support.constraint.ConstraintLayout>

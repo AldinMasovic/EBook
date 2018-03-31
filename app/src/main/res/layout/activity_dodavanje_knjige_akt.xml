@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ba.unsa.etf.rma.aldin_masovic.ebook.DodavanjeKnjigeAkt">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/naslovnaStr"
+                android:layout_width="137dp"
+                android:layout_height="121dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dNadjiSliku"
+                app:srcCompat="@android:drawable/btn_star_big_off"
+                tools:layout_editor_absoluteY="178dp"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <Button
+                android:id="@+id/dNadjiSliku"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintStart_toEndOf="@+id/naslovnaStr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Nadji sliku"
+                tools:layout_editor_absoluteY="178dp"
+                tools:layout_editor_absoluteX="270dp" />
+
+            <EditText
+                android:id="@+id/imeAutora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:hint="Ime autora"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/naslovnaStr"
+                app:layout_constraintTop_toBottomOf="@+id/naslovnaStr"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <EditText
+                android:id="@+id/nazivKnjige"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:hint="Naziv knjige"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/naslovnaStr"
+                app:layout_constraintTop_toBottomOf="@+id/imeAutora"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <Spinner
+                android:id="@+id/sKategorijaKnjige"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/nazivKnjige"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <Button
+                android:id="@+id/dPonisti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="@+id/naslovnaStr"
+                app:layout_constraintTop_toBottomOf="@+id/sKategorijaKnjige"
+
+                android:text="Ponisti" />
+
+            <Button
+                android:id="@+id/dUpisiKnjigu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/sKategorijaKnjige"
+                app:layout_constraintEnd_toEndOf="@+id/dNadjiSliku"
+
+                android:text="Unesi" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
