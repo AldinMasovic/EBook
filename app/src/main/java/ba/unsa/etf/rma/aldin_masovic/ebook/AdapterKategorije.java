@@ -11,16 +11,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by B50-50 on 31.03.2018..
+ * Created by B50-50 on 08.04.2018..
  */
+ public class AdapterKategorije extends ArrayAdapter<Kategorija> {
 
-public class MojAdapter extends ArrayAdapter<Knjiga> {
-
-        public MojAdapter(Context context, int textViewResourceId) {
+        public AdapterKategorije(Context context, int textViewResourceId) {
             super(context, textViewResourceId);
         }
 
-        public MojAdapter(Context context, int resource, ArrayList<Knjiga> items) {
+        public AdapterKategorije(Context context, int resource, ArrayList<Kategorija> items) {
             super(context, resource, items);
         }
 
@@ -32,18 +31,15 @@ public class MojAdapter extends ArrayAdapter<Knjiga> {
             if (v == null) {
                 LayoutInflater vi;
                 vi = LayoutInflater.from(getContext());
-                v = vi.inflate(R.layout.izgled_liste_knijga_dva, null);
+                v = vi.inflate(R.layout.jedan_text, null);
             }
-            Knjiga p = getItem(position);
+            Kategorija p = getItem(position);
 
             if (p != null) {
-                TextView tt1 = (TextView) v.findViewById(R.id.eNaziv);
-                TextView tt2=(TextView) v.findViewById(R.id.eAutor);
-                ImageView tt3= (ImageView)v.findViewById(R.id.eNaslovna);
+                TextView tt1 = (TextView) v.findViewById(R.id.teksticsam);
+
                 if (tt1 != null) {
-                    tt1.setText(p.GetIme());
-                    tt2.setText(p.GetNaziv());
-                    tt3.setImageBitmap(p.GetBit());
+                    tt1.setText(p.ToString());
                 }
             }
 
@@ -51,4 +47,3 @@ public class MojAdapter extends ArrayAdapter<Knjiga> {
         }
 
     }
-

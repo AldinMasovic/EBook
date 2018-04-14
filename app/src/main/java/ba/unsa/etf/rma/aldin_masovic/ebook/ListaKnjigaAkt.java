@@ -25,7 +25,7 @@ public class ListaKnjigaAkt extends AppCompatActivity {
         final Button povratak= (Button) findViewById(R.id.dPovratak);
         //final ArrayList<String> unosi=new ArrayList<String>();
         final ArrayList<Knjiga> unosi= new ArrayList<Knjiga>();
-        final MojAdapter adapter=new MojAdapter(this,R.layout.izgled_liste_knjiga,unosi);
+        final MojAdapter adapter=new MojAdapter(this,R.layout.izgled_liste_knijga_dva,unosi);
         final int pozicija=i;
         //final ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,
          //      unosi);

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EBook</string>
+    <string name="autori">Autors</string>
+    <string name="dodaj_kategoriju">Add kategory</string>
+    <string name="kategorije">Kategory</string>
+    <string name="trazi">Search</string>
+    <string name="povratak">Back</string>
+    <string name="ime_autora">Name of autor</string>
+    <string name="nadji_sliku">Browse</string>
+    <string name="naziv_knjige">Name of book</string>
+    <string name="ponisti">Cancel</string>
+    <string name="unesi">Add</string>
+    <string name="dodaj_knjigu">Add Book</string>
+</resources>

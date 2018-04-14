@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EBook</string>
+    <string name="autori">Autori</string>
+    <string name="dodaj_kategoriju">Dodaj kategoriju</string>
+    <string name="dodaj_knjigu">Dodaj Knjigu</string>
+    <string name="ime_autora">Ime autora</string>
+    <string name="kategorije">Kategorije</string>
+    <string name="nadji_sliku">Nadji sliku</string>
+    <string name="naziv_knjige">Naziv knjige</string>
+    <string name="ponisti">Ponisti</string>
+    <string name="povratak">Povratak</string>
+    <string name="trazi">Trazi</string>
+    <string name="unesi">Unesi</string>
+</resources>

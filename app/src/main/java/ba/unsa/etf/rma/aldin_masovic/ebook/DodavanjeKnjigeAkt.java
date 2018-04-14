@@ -29,7 +29,7 @@ import static android.R.attr.data;
 
 public class DodavanjeKnjigeAkt extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
-    public static Bitmap xxx=null;
+    //public static Bitmap xxx=null;
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         try {
@@ -50,7 +50,7 @@ public class DodavanjeKnjigeAkt extends AppCompatActivity {
             while(bm == null)
                 bm = BitmapFactory.decodeStream(openFileInput(nazivSlike));
             slika.setImageBitmap(bm);
-            xxx=bm;
+            //xxx=bm;
 
         }
         catch(IOException e) {
@@ -115,8 +115,6 @@ public class DodavanjeKnjigeAkt extends AppCompatActivity {
                 Uri data = Uri.fromFile(Environment.getExternalStorageDirectory());
                 String type = "image/*";
                 intent.setDataAndType(data, type);
-
-
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     //   //startActivityForResult(intent, 0);
                     startActivityForResult(Intent.createChooser(intent, "Odaberite fotografiju"), 1);
