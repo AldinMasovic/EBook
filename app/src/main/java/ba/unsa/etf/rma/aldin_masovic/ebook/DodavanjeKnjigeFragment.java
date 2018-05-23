@@ -32,6 +32,7 @@ import static ba.unsa.etf.rma.aldin_masovic.ebook.KategorijeAkt.siri;
 
 public class DodavanjeKnjigeFragment extends Fragment {
     private ArrayList<Kategorija> kategorije;
+    private Autor autor;
     public static Bitmap xxx=null;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -90,7 +91,7 @@ public class DodavanjeKnjigeFragment extends Fragment {
                     Bundle argumenti = new Bundle();
                     //argumenti.putParcelableArrayList("knjiga", podaciKategorija);
                     argumenti.putBoolean("Proslo",true);
-                    argumenti.putParcelable("knjiga",new Knjiga(0,name,nazif,xxx));
+                    argumenti.putParcelable("knjiga",new Knjiga(name,nazif,xxx));
                     xxx=null;
                     //dodati xxx=null
                     argumenti.putString("kategorija",odabir.getSelectedItem().toString());
@@ -174,6 +175,10 @@ public class DodavanjeKnjigeFragment extends Fragment {
         parcelFileDescriptor.close();
         return image;
     }
+
+
+
+
     /*
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -204,3 +209,6 @@ public class DodavanjeKnjigeFragment extends Fragment {
     }*/
 }
 
+//TODO: poziv ovog na button klik
+// new SearchArtist((SearchArtist.OnMuzicarSearchDone)
+//FragmentLista.this).execute(ime_koje_trazim);

@@ -3,7 +3,7 @@
 +++++ 2017/18
 +++++ RMA
 +++++
-+++++ Spirala 2
++++++ Spirala 3
 +++++ Uraðeno: 
 +++++ Sve
 +++++ Nije uraðeno:

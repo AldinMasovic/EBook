@@ -33,6 +33,7 @@ public class ListeFragment extends Fragment {
     Button button_knjiga;
     Button dKategorije;
     Button dAutori;
+    Button dDodajOnline;
     ArrayList<String> listaKategorija;
     ArrayList<String>listaAutora;
 
@@ -51,6 +52,7 @@ public class ListeFragment extends Fragment {
         button_knjiga=(Button)view.findViewById(R.id.dDodajKnjigu);
         dKategorije=(Button)view.findViewById(R.id.dKategorije);
         dAutori=(Button)view.findViewById(R.id.dAutori);
+        dDodajOnline=(Button)view.findViewById(R.id.dDodajOnline);
         return view;
 
     }
@@ -113,14 +115,34 @@ public class ListeFragment extends Fragment {
                 }
             }
             boolean ubacen=false;
-            for(int i=0;i<autori.size();i++){
-                if(autori.get(i).getNaziv().equals(book.GetIme())){
-                    autori.get(i).getKnjige().add(book);
-                    ubacen=true;
-                    break;
+            for(int i=0;i<autori.size();i++) {
+                for (int j = 0; j < book.getAutori().size(); j++) {
+                    if (book.getAutori().get(j).getimeiPrezime().equals(autori.get(i).getimeiPrezime())) {
+                        autori.get(i).getKnjige().add(book.getNaziv());
+                        ubacen = true;
+                        break;
+                    }
                 }
             }
-            if(!ubacen){autori.add(new Autor(book.GetIme()));autori.get(autori.size()-1).getKnjige().add(book);}
+//                if(book.getAutori().contains(autori.get(i))){
+////                    TODO: ispraviti autori.get(i).dodajKnjigu(book.getId());
+//                    autori.get(i).getKnjige().add(book.getNaziv());
+//                    ubacen=true;
+//                    break;
+//                }
+//                if(autori.get(i).getimeiPrezime().equals(book.GetIme())){
+//                    autori.get(i).getKnjige().add(book.GetNaziv());
+//                    ubacen=true;
+//                    break;
+//                }
+
+            //TODO: prepraviti ovo čudno mi nešta samo jedno ubacuje hmm...
+            if(!ubacen){
+                    autori.add(new Autor(book.getAutori().get(0).getimeiPrezime()));
+//                    TODO: treba id
+                    autori.get(autori.size()-1).getKnjige().add(book.getNaziv());
+            }
+                    //TODO: mozda treba getID na kraju
             kategorije=podaciKategorija;
              listaKategorija=new ArrayList<String>();
             for(int i=0;i<kategorije.size();i++){
@@ -282,6 +304,27 @@ public class ListeFragment extends Fragment {
                 unosteksta.setVisibility(View.VISIBLE);
             }
         });
+
+        dDodajOnline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle argumenti = new Bundle();
+                argumenti.putParcelableArrayList("kategorije", podaciKategorija);
+                FragmentOnline fd = new FragmentOnline();
+                fd.setArguments(argumenti);
+//                if(siri){
+//                    getFragmentManager().beginTransaction()
+//                            .replace(R.id.ListeFragment2, fd)
+//                            //.addToBackStack(null)
+//                            .commit();}
+//                else
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.ListeFragment, fd)
+                            //.addToBackStack(null)
+                            .commit();
+            }
+        });
     }
+
 
 }

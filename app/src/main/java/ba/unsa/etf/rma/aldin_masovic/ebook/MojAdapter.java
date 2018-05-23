@@ -41,9 +41,10 @@ public class MojAdapter extends ArrayAdapter<Knjiga> {
                 TextView tt2=(TextView) v.findViewById(R.id.eAutor);
                 ImageView tt3= (ImageView)v.findViewById(R.id.eNaslovna);
                 if (tt1 != null) {
-                    tt1.setText(p.GetIme());
-                    tt2.setText(p.GetNaziv());
-                    tt3.setImageBitmap(p.GetBit());
+                    tt1.setText(p.getAutori().get(0).getimeiPrezime());
+                    tt2.setText(p.getNaziv());
+                    tt3.setImageResource(R.drawable.slika);
+                    //tt3.setImageBitmap(R.drawable.slika);
                 }
             }
 

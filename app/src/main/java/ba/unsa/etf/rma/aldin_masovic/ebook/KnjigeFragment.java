@@ -30,7 +30,7 @@ public class KnjigeFragment extends Fragment {
             if(getArguments().containsKey("kategorija"))
                 knjige=podaciKategorija.get(pos).GetKnjige();
             else if(getArguments().containsKey("autori"))
-                knjige=autori.get(pos).getKnjige();
+                knjige=autori.get(pos).getknjige1();
             //knjige=getArguments().getParcelableArrayList("kategorija");
             Button dPovratak=(Button)iv.findViewById(R.id.dPovratak);
             final ListView listaKnjiga=(ListView)iv.findViewById(R.id.listaKnjiga);
@@ -74,12 +74,23 @@ public class KnjigeFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        knjige=new ArrayList<Knjiga>();
         if (getArguments()!=null && getArguments().containsKey("pozicija")) {
             int pos=getArguments().getInt("pozicija");
             if(getArguments().containsKey("kategorija"))
                 knjige=podaciKategorija.get(pos).GetKnjige();
             else if(getArguments().containsKey("autori"))
-                knjige=autori.get(pos).getKnjige();
+            {
+                for(int i=0;i<podaciKategorija.size();i++){
+                    for(int j=0;j<podaciKategorija.get(i).GetKnjige().size();j++){
+//                        TODO: ne treba naziv nego id
+                        if(podaciKategorija.get(i).GetKnjige().get(j).getAutori().get(0).getimeiPrezime()
+                                .equals(autori.get(pos).getimeiPrezime()))
+                            knjige.add(podaciKategorija.get(i).GetKnjige().get(j));
+                    }
+                }
+            }
+                //knjige=autori.get(pos).getKnjige();
             //knjige=getArguments().getParcelableArrayList("kategorija");
             Button dPovratak=(Button)getView().findViewById(R.id.dPovratak);
             ListView listaKnjiga=(ListView)getView().findViewById(R.id.listaKnjiga);

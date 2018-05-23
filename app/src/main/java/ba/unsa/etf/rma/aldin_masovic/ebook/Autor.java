@@ -11,33 +11,49 @@ import java.util.ArrayList;
 
 public class Autor implements Parcelable
 {
-    private ArrayList<Knjiga> knjige;
-    private String naziv;
-    public Autor(String naziv){
-        this.naziv=naziv;
-        knjige=new ArrayList<Knjiga>();
+    private ArrayList<Knjiga> knjige1;
+    private ArrayList<String>knjige;
+    private String imeiPrezime;
+    public Autor(String imeiPrezime){
+        this.imeiPrezime=imeiPrezime;
+        knjige1=new ArrayList<Knjiga>();
+        knjige=new ArrayList<String>();
     }
-    public int getBroj(){return knjige.size();}
-    public String getNaziv(){return naziv;}
-    public void setNaziv(String aa){naziv=aa;}
-    public ArrayList<Knjiga> getKnjige(){return knjige;}
+    public Autor(String ime,String id){
+        imeiPrezime=ime;
+        knjige=new ArrayList<String>();
+        knjige.add(id);
+//        TODO: dodati knjigu pod ovim id-em u listu knjiga hmm
+    }
+    
+    public int getBroj(){return knjige1.size();}
+    public String getimeiPrezime(){return imeiPrezime;}
+    public void setimeiPrezime(String aa){imeiPrezime=aa;}
+    public ArrayList<String> getKnjige(){return knjige;}
+    public void setKnjige(ArrayList<String>knjige){this.knjige=knjige;}
+    public ArrayList<Knjiga> getknjige1(){return knjige1;}
+    public void dodajKnjigu(String id){
+        for(int i=0;i<knjige.size();i++){
+            if(knjige.get(i).equals(id))return;
+        }
+        knjige.add(id);
+    }
     @Override
     public String toString(){
-        return knjige.size()+":  "+naziv;
+        return knjige.size()+":  "+imeiPrezime;
     }
     @Override
     public int describeContents() {
         return 0;
     }
     protected Autor(Parcel in){
-        naziv=in.readString();
-        //knjige=in.readArrayList();
+        imeiPrezime=in.readString();
+        knjige=in.readArrayList(String.class.getClassLoader());
     }
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(naziv);
-        //dest.writeArray(knjige);
-
+        dest.writeString(imeiPrezime);
+        dest.writeList(knjige);
     }
     public static final Creator<Autor> CREATOR = new Creator<Autor>() {
         @Override
