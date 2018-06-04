@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/kraj">
+
+    <ImageView
+        android:id="@+id/naslovnaStr"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription=""
+        app:layout_constraintEnd_toStartOf="@+id/dNadjiSliku"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_off"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/dNadjiSliku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintStart_toEndOf="@+id/naslovnaStr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/nadji_sliku"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="16dp"
+        tools:ignore="RtlHardcoded" />
+
+    <EditText
+        android:id="@+id/imeAutora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/ime_autora"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/naslovnaStr"
+        app:layout_constraintTop_toBottomOf="@+id/naslovnaStr"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/nazivKnjige"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/naziv_knjige"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/naslovnaStr"
+        app:layout_constraintTop_toBottomOf="@+id/imeAutora"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Spinner
+        android:id="@+id/sKategorijaKnjige"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nazivKnjige"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/dPonisti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/naslovnaStr"
+
+        android:text="@string/ponisti"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/sKategorijaKnjige"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/sKategorijaKnjige" />
+
+    <Button
+        android:id="@+id/dUpisiKnjigu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/dNadjiSliku"
+        android:text="@string/unesi"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/sKategorijaKnjige"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/sKategorijaKnjige" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EBook</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="trazi">Trazi</string>
+    <string name="dodaj_kategoriju">Dodaj kategoriju</string>
+    <string name="autori">Autori</string>
+    <string name="kategorije">Kategorije</string>
+    <string name="povratak">Povratak</string>
+    <string name="naziv_knjige">Naziv knjige</string>
+    <string name="ime_autora">Ime autora</string>
+    <string name="nadji_sliku">Nadji sliku</string>
+    <string name="ponisti">Ponisti</string>
+    <string name="unesi">Unesi</string>
+    <string name="dodaj_knjigu">Dodaj Knjigu</string>
+</resources>
